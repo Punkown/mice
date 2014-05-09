@@ -16,6 +16,10 @@ public class Mice {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
+        Window frame=new Window();
+        frame.setVisible(true);
+        frame.pack();
+        frame.setTitle("Hello");
         // TODO code application logic here
     }
     
