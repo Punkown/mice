@@ -78,6 +78,7 @@ public class Window extends javax.swing.JFrame {
     private void jButton1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton1MouseClicked
         // TODO add your handling code here:
         JOptionPane.showMessageDialog(this, "Hello from the web");
+        String somethingtwo="";
             
     }//GEN-LAST:event_jButton1MouseClicked
 
