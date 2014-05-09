@@ -79,6 +79,7 @@ public class Window extends javax.swing.JFrame {
         // TODO add your handling code here:
         JOptionPane.showMessageDialog(this, "Hello from the web");
         String something="";
+        String somethingtwo="";
             
     }//GEN-LAST:event_jButton1MouseClicked
 
