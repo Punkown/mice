@@ -19,7 +19,7 @@ public class LoginFrame extends javax.swing.JFrame {
         try
     
         {
-            db = new InfDB("/Users/Shared/MICEDB.fdb");
+            db = new InfDB("C:\\Users\\Andreas\\Desktop\\MICEDB.fdb");
             
         }catch (InfException e)
         {
@@ -113,9 +113,36 @@ public class LoginFrame extends javax.swing.JFrame {
 
     private void LoggaInMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_LoggaInMouseClicked
         
-        this.dispose();
-        AnstalldPanel panel = new AnstalldPanel();
-        panel.setVisible(true);
+        String aNamn = txt_login.getText();
+        char[] pw = txt_password.getPassword();
+        String password = "";
+        String passwordFromDb = "";
+        for (char c : pw) 
+        {
+            password += c;
+        }
+        
+        int userId = Integer.parseInt(aNamn);
+        try {
+            passwordFromDb = db.fetchSingle("select losenord from administrator where aid =" + userId);
+            
+        } catch (Exception e) {
+            
+            System.out.println(e.getMessage());
+        }
+        
+        
+        if (passwordFromDb.equals(password))
+        {
+            this.dispose();
+            AnstalldPanel panel = new AnstalldPanel();
+            panel.setVisible(true);
+        }
+        else
+        {
+             JOptionPane.showMessageDialog(this, "Något gick fel");
+        }
+       
     }//GEN-LAST:event_LoggaInMouseClicked
 
     private void txt_loginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txt_loginActionPerformed
