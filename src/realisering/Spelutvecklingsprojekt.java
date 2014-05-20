@@ -47,6 +47,7 @@ private InfDB db;
         jLabel2 = new javax.swing.JLabel();
         jScrollPane3 = new javax.swing.JScrollPane();
         jTable3 = new javax.swing.JTable();
+        NyttSpelProjekt = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setMinimumSize(new java.awt.Dimension(800, 600));
@@ -120,16 +121,23 @@ private InfDB db;
 
         jTable3.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null}
             },
             new String [] {
-                "Namn", "Projekt", "Title 3", "Title 4"
+                "Namn", "Projekt", "Title 3", "Lead", "null"
             }
         ));
         jScrollPane3.setViewportView(jTable3);
+
+        NyttSpelProjekt.setText("Nytt spelprojekt");
+        NyttSpelProjekt.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                NyttSpelProjektMouseClicked(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -141,19 +149,21 @@ private InfDB db;
                 .addGap(28, 28, 28))
             .addGroup(layout.createSequentialGroup()
                 .addGap(80, 80, 80)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jScrollPane3)
-                    .addComponent(jLabel2)
-                    .addComponent(jLabel1)
-                    .addComponent(jScrollPane2)
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(Anstalld, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(KunskapsDoman)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(Spelprojekt, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(Spelutveckling, javax.swing.GroupLayout.PREFERRED_SIZE, 152, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(NyttSpelProjekt)
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                        .addComponent(jLabel2)
+                        .addComponent(jLabel1)
+                        .addComponent(jScrollPane2)
+                        .addGroup(layout.createSequentialGroup()
+                            .addComponent(Anstalld, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                            .addComponent(KunskapsDoman)
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                            .addComponent(Spelprojekt, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                            .addComponent(Spelutveckling, javax.swing.GroupLayout.PREFERRED_SIZE, 152, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(jScrollPane3)))
                 .addContainerGap(501, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -173,7 +183,9 @@ private InfDB db;
                 .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 16, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 83, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 246, Short.MAX_VALUE)
+                .addGap(98, 98, 98)
+                .addComponent(NyttSpelProjekt)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 119, Short.MAX_VALUE)
                 .addComponent(jButton5)
                 .addContainerGap())
         );
@@ -187,6 +199,9 @@ private InfDB db;
 
     private void SpelprojektActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SpelprojektActionPerformed
         // TODO add your handling code here:
+        this.dispose();
+        SpelProjekt panelSpelProjekt = new SpelProjekt();
+        panelSpelProjekt.setVisible(true);
     }//GEN-LAST:event_SpelprojektActionPerformed
 
     private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
@@ -195,6 +210,8 @@ private InfDB db;
 
     private void SpelutvecklingActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SpelutvecklingActionPerformed
         // TODO add your handling code here:
+        
+        
     }//GEN-LAST:event_SpelutvecklingActionPerformed
 
     private void KunskapsDomanMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_KunskapsDomanMouseClicked
@@ -219,6 +236,10 @@ private InfDB db;
         Spelutvecklingsprojekt panel = new Spelutvecklingsprojekt();
         panel.setVisible(true);
     }//GEN-LAST:event_SpelutvecklingMouseClicked
+
+    private void NyttSpelProjektMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_NyttSpelProjektMouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_NyttSpelProjektMouseClicked
 
     /**
      * @param args the command line arguments
@@ -258,6 +279,7 @@ private InfDB db;
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton Anstalld;
     private javax.swing.JButton KunskapsDoman;
+    private javax.swing.JButton NyttSpelProjekt;
     private javax.swing.JButton Spelprojekt;
     private javax.swing.JButton Spelutveckling;
     private javax.swing.JButton jButton5;
