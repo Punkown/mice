@@ -19,12 +19,13 @@ public class LoginFrame extends javax.swing.JFrame {
         try
     
         {
-            db = new InfDB("C:\\Users\\Andreas\\Desktop\\MICEDB.fdb");
+            db = new InfDB("/Users/Shared/MICEDB.FDB");
             
         }catch (InfException e)
         {
-           
-        }}
+         e.printError();
+        }
+    }
 
 
     @SuppressWarnings("unchecked")
@@ -135,7 +136,7 @@ public class LoginFrame extends javax.swing.JFrame {
         if (passwordFromDb.equals(password))
         {
             this.dispose();
-            AnstalldPanel panel = new AnstalldPanel();
+            Panel panel = new Panel();
             panel.setVisible(true);
         }
         else
