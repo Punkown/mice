@@ -21,44 +21,65 @@ private InfDB db;
         try
     
         {
-            db = new InfDB("/Users/Shared/MICEDB.fdb");
+            db = new InfDB("C:\\Users\\Andreas\\Desktop\\MICEDB.fdb");
             
-        }catch (InfException e)
-        {
-           
-        }
+        }catch (InfException e){}
+        fyllCombo();
+        setTextUBenamning();
+        setTextUBeskrivning();
     }
+    private void setTextUBenamning()
+    {
+        tfUBenamning.setText(comboBoxKunskap.getSelectedItem().toString());
+    }
+    private void setTextUBeskrivning()
+    {
+        String besk = "";
+        try{
+            besk = db.fetchSingle("select beskrivning from KOMPETENSDOMAN where benamning = '"+comboBoxKunskap.getSelectedItem().toString()+"'");
+        }catch(InfException e){}
+        tfAreaBesk.setText(besk);
+    }
+    private void fyllCombo()
+    {
+        
+        ArrayList<String> a1 = null;
+        try{
+            a1 = db.fetchColumn("select benamning from KOMPETENSDOMAN ");
+        }catch(InfException e){}
+        if(a1 != null){
+        for(int i = 0; i < a1.size(); i++){
+           System.out.print("Hej");
+                comboBoxKunskap.addItem(a1.get(i));
+           
+        }}
+    } 
 
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jTextField4 = new javax.swing.JTextField();
-        jTextField5 = new javax.swing.JTextField();
+        tfUBenamning = new javax.swing.JTextField();
         jLabel8 = new javax.swing.JLabel();
         KunskapsDoman_laggTill = new javax.swing.JButton();
         jLabel9 = new javax.swing.JLabel();
-        jComboBox1 = new javax.swing.JComboBox();
-        KunskapsDoman = new javax.swing.JButton();
+        comboBoxKunskap = new javax.swing.JComboBox();
+        btnKompetens = new javax.swing.JButton();
         jButton8 = new javax.swing.JButton();
-        SpelProjekt = new javax.swing.JButton();
+        btnSpelOPro = new javax.swing.JButton();
         jButton5 = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
         txt_Benamning = new javax.swing.JTextField();
         txt_Beskrivning = new javax.swing.JTextField();
-        Anstalld = new javax.swing.JButton();
-        Spelutveckling = new javax.swing.JButton();
+        btnAnstalld = new javax.swing.JButton();
+        btnSpelut = new javax.swing.JButton();
         jLabel5 = new javax.swing.JLabel();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        tfAreaBesk = new javax.swing.JTextArea();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-
-        jTextField4.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField4ActionPerformed(evt);
-            }
-        });
 
         jLabel8.setText("Benamning");
 
@@ -68,34 +89,28 @@ private InfDB db;
                 KunskapsDoman_laggTillMouseClicked(evt);
             }
         });
-        KunskapsDoman_laggTill.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                KunskapsDoman_laggTillActionPerformed(evt);
-            }
-        });
 
         jLabel9.setText("UPPDATERA KUNSKAPSDOMÄN");
 
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        comboBoxKunskap.addItemListener(new java.awt.event.ItemListener() {
+            public void itemStateChanged(java.awt.event.ItemEvent evt) {
+                comboBoxKunskapItemStateChanged(evt);
+            }
+        });
 
-        KunskapsDoman.setText("Kompetensdomän");
-        KunskapsDoman.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                KunskapsDomanActionPerformed(evt);
+        btnKompetens.setText("Kompetensdomän");
+        btnKompetens.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btnKompetensMouseClicked(evt);
             }
         });
 
         jButton8.setText("Uppdatera");
-        jButton8.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton8ActionPerformed(evt);
-            }
-        });
 
-        SpelProjekt.setText("Spel & projekt");
-        SpelProjekt.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                SpelProjektActionPerformed(evt);
+        btnSpelOPro.setText("Spel & projekt");
+        btnSpelOPro.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btnSpelOProMouseClicked(evt);
             }
         });
 
@@ -112,32 +127,26 @@ private InfDB db;
 
         jLabel4.setText("LÄGG TILL KOMPETENSDÄN");
 
-        txt_Benamning.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txt_BenamningActionPerformed(evt);
-            }
-        });
-
-        Anstalld.setText("Anställd");
-        Anstalld.addMouseListener(new java.awt.event.MouseAdapter() {
+        btnAnstalld.setText("Anställd");
+        btnAnstalld.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                AnstalldMouseClicked(evt);
-            }
-        });
-        Anstalld.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                AnstalldActionPerformed(evt);
+                btnAnstalldMouseClicked(evt);
             }
         });
 
-        Spelutveckling.setText("Spelutveckling");
-        Spelutveckling.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                SpelutvecklingActionPerformed(evt);
+        btnSpelut.setText("Spelutveckling");
+        btnSpelut.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btnSpelutMouseClicked(evt);
             }
         });
 
         jLabel5.setText("Beskrivning");
+
+        tfAreaBesk.setColumns(20);
+        tfAreaBesk.setLineWrap(true);
+        tfAreaBesk.setRows(5);
+        jScrollPane1.setViewportView(tfAreaBesk);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -164,14 +173,15 @@ private InfDB db;
                                     .addComponent(jLabel8)
                                     .addComponent(jLabel5))
                                 .addGap(50, 50, 50)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jTextField5, javax.swing.GroupLayout.PREFERRED_SIZE, 142, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jTextField4, javax.swing.GroupLayout.PREFERRED_SIZE, 142, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addComponent(tfUBenamning, javax.swing.GroupLayout.PREFERRED_SIZE, 142, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addComponent(jLabel9)
-                            .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jButton8)))
+                            .addComponent(comboBoxKunskap, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(jButton8)
+                                .addGap(26, 26, 26)
+                                .addComponent(jScrollPane1))))
                     .addComponent(jLabel4))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap())
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addContainerGap(83, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -179,13 +189,13 @@ private InfDB db;
                         .addComponent(jButton5)
                         .addGap(28, 28, 28))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addComponent(Anstalld, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(btnAnstalld, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(KunskapsDoman)
+                        .addComponent(btnKompetens)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(SpelProjekt, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(btnSpelOPro, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(Spelutveckling, javax.swing.GroupLayout.PREFERRED_SIZE, 152, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(btnSpelut, javax.swing.GroupLayout.PREFERRED_SIZE, 152, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(90, 90, 90))))
         );
         layout.setVerticalGroup(
@@ -193,39 +203,38 @@ private InfDB db;
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(Anstalld)
-                    .addComponent(KunskapsDoman)
-                    .addComponent(SpelProjekt)
-                    .addComponent(Spelutveckling))
+                    .addComponent(btnAnstalld)
+                    .addComponent(btnKompetens)
+                    .addComponent(btnSpelOPro)
+                    .addComponent(btnSpelut))
                 .addGap(31, 31, 31)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel4)
                     .addComponent(jLabel9))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(comboBoxKunskap, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(3, 3, 3)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel1)
-                            .addComponent(txt_Benamning, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(jLabel1)
+                        .addComponent(txt_Benamning, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(jLabel8)
+                        .addComponent(tfUBenamning, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(txt_Beskrivning, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLabel2))
                         .addGap(18, 18, 18)
                         .addComponent(KunskapsDoman_laggTill))
-                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel8)
-                            .addComponent(jTextField4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jTextField5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel5))
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(jLabel5)
                         .addGap(18, 18, 18)
                         .addComponent(jButton8)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 332, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 309, Short.MAX_VALUE)
                 .addComponent(jButton5)
                 .addContainerGap())
         );
@@ -233,53 +242,21 @@ private InfDB db;
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jTextField4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField4ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField4ActionPerformed
-
-    private void KunskapsDoman_laggTillActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_KunskapsDoman_laggTillActionPerformed
-
-    }//GEN-LAST:event_KunskapsDoman_laggTillActionPerformed
-
-    private void KunskapsDomanActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_KunskapsDomanActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_KunskapsDomanActionPerformed
-
-    private void jButton8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton8ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton8ActionPerformed
-
-    private void SpelProjektActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SpelProjektActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_SpelProjektActionPerformed
-
     private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jButton5ActionPerformed
 
-    private void txt_BenamningActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txt_BenamningActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txt_BenamningActionPerformed
-
-    private void SpelutvecklingActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SpelutvecklingActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_SpelutvecklingActionPerformed
-
-    private void AnstalldMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_AnstalldMouseClicked
+    private void btnAnstalldMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnAnstalldMouseClicked
         this.dispose();
         AnstalldPanel panel = new AnstalldPanel();
         panel.setVisible(true);
-    }//GEN-LAST:event_AnstalldMouseClicked
-
-    private void AnstalldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AnstalldActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_AnstalldActionPerformed
+    }//GEN-LAST:event_btnAnstalldMouseClicked
 
     private void KunskapsDoman_laggTillMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_KunskapsDoman_laggTillMouseClicked
 
         try
      
-{
+{    
         
         String sqlFraga = "INSERT INTO KOMPETENSDOMAN VALUES(" + db.getAutoIncrement("KOMPETENSDOMAN", "kid") +
                 ",'" + txt_Benamning.getText() + "', '" +
@@ -300,6 +277,29 @@ catch(InfException e)
 
 
     }//GEN-LAST:event_KunskapsDoman_laggTillMouseClicked
+
+    private void btnKompetensMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnKompetensMouseClicked
+        // TODO add your handling code here:
+        this.dispose();
+    }//GEN-LAST:event_btnKompetensMouseClicked
+
+    private void btnSpelOProMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnSpelOProMouseClicked
+        this.dispose();
+        SpelProjekt panel = new SpelProjekt();
+        panel.setVisible(true);
+    }//GEN-LAST:event_btnSpelOProMouseClicked
+
+    private void btnSpelutMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnSpelutMouseClicked
+          this.dispose();
+        Spelutvecklingsprojekt panel = new Spelutvecklingsprojekt();
+        panel.setVisible(true);
+                                  
+    }//GEN-LAST:event_btnSpelutMouseClicked
+
+    private void comboBoxKunskapItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_comboBoxKunskapItemStateChanged
+        setTextUBenamning();
+        setTextUBeskrivning();
+    }//GEN-LAST:event_comboBoxKunskapItemStateChanged
 
     /**
      * @param args the command line arguments
@@ -337,22 +337,23 @@ catch(InfException e)
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton Anstalld;
-    private javax.swing.JButton KunskapsDoman;
     private javax.swing.JButton KunskapsDoman_laggTill;
-    private javax.swing.JButton SpelProjekt;
-    private javax.swing.JButton Spelutveckling;
+    private javax.swing.JButton btnAnstalld;
+    private javax.swing.JButton btnKompetens;
+    private javax.swing.JButton btnSpelOPro;
+    private javax.swing.JButton btnSpelut;
+    private javax.swing.JComboBox comboBoxKunskap;
     private javax.swing.JButton jButton5;
     private javax.swing.JButton jButton8;
-    private javax.swing.JComboBox jComboBox1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
-    private javax.swing.JTextField jTextField4;
-    private javax.swing.JTextField jTextField5;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JTextArea tfAreaBesk;
+    private javax.swing.JTextField tfUBenamning;
     private javax.swing.JTextField txt_Benamning;
     private javax.swing.JTextField txt_Beskrivning;
     // End of variables declaration//GEN-END:variables

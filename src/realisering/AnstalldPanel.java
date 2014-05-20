@@ -337,8 +337,8 @@ private void fyllComboboxTaBort(String a)
 
     private void KunskapsDomanMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_KunskapsDomanMouseClicked
         this.dispose();
-        KunskapsDoman panel = new KunskapsDoman();
-        panel.setVisible(true);
+        KunskapsDoman komp = new KunskapsDoman();
+        komp.setVisible(true);
     }//GEN-LAST:event_KunskapsDomanMouseClicked
 
     private void AnstalldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AnstalldActionPerformed
@@ -346,7 +346,9 @@ private void fyllComboboxTaBort(String a)
     }//GEN-LAST:event_AnstalldActionPerformed
 
     private void SpelProjektMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_SpelProjektMouseClicked
-        
+        this.dispose();
+        SpelProjekt panel = new SpelProjekt();
+        panel.setVisible(true);
     }//GEN-LAST:event_SpelProjektMouseClicked
 
     private void SpelutvecklingMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_SpelutvecklingMouseClicked
