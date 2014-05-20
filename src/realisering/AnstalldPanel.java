@@ -5,6 +5,7 @@ import java.util.HashMap;
 import javax.swing.JOptionPane;
 import oru.inf.InfDB;
 import oru.inf.InfException;
+import javax.swing.JOptionPane;
 
 
 
@@ -22,7 +23,7 @@ private InfDB db;
         try
     
         {
-            db = new InfDB("C:\\Users\\Andreas\\Desktop\\MICEDB.fdb");
+            db = new InfDB("/Users/Shared/MICEDB.fdb");
             
         }catch (InfException e)
         {
@@ -32,25 +33,30 @@ private InfDB db;
     }
 private void fyllComboBoxAnstallda()
 {
-    ArrayList<String> a1 = null;
-    try{
-        a1 = db.fetchColumn("select NAMN from ANSTALLD");
-    }
-        catch(InfException e){}
-    if(a1 != null){
-    for(int i = 0; i < a1.size(); i++){
-        a1.get(i);
-      comboAnst.addItem(a1.get(i));
-      fyllComboboxTaBort(a1.get(i));
-    }
-        
+    String sqlFraga = "SELECT aid, Namn from ANSTALLD";
+    try
+    {
+        ArrayList<HashMap<String, String>> AnstalldLista = db.fetchRows(sqlFraga);
+                
+                for(int i = 0; i < AnstalldLista.size(); i++)
+                {
+                    String a = AnstalldLista.get(i).get("AID") + "-" + AnstalldLista.get(i).get("NAMN");
+                    cbTabort.addItem(a);
+                    System.out.println(a);
+                
+                }
+   
+}
+    catch(InfException e)
+    {
+    JOptionPane.showMessageDialog(null, e.getMessage());
+    {
+
+}
     }
 }
-private void fyllComboboxTaBort(String a)
-{
-    comboboxTaBortAnstalld.addItem(a);
-}
-        
+    
+      
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -78,7 +84,7 @@ private void fyllComboboxTaBort(String a)
         LaggTill = new javax.swing.JButton();
         jLabel9 = new javax.swing.JLabel();
         comboAnst = new javax.swing.JComboBox();
-        comboboxTaBortAnstalld = new javax.swing.JComboBox();
+        cbTabort = new javax.swing.JComboBox();
         jButton8 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -97,21 +103,11 @@ private void fyllComboboxTaBort(String a)
                 SpelutvecklingMouseClicked(evt);
             }
         });
-        Spelutveckling.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                SpelutvecklingActionPerformed(evt);
-            }
-        });
 
         KunskapsDoman.setText("KOMPETENSDOMAN");
         KunskapsDoman.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 KunskapsDomanMouseClicked(evt);
-            }
-        });
-        KunskapsDoman.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                KunskapsDomanActionPerformed(evt);
             }
         });
 
@@ -121,18 +117,8 @@ private void fyllComboboxTaBort(String a)
                 SpelProjektMouseClicked(evt);
             }
         });
-        SpelProjekt.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                SpelProjektActionPerformed(evt);
-            }
-        });
 
         jButton5.setText("Logga ut");
-        jButton5.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton5ActionPerformed(evt);
-            }
-        });
 
         jLabel1.setText("Namn");
 
@@ -142,27 +128,20 @@ private void fyllComboboxTaBort(String a)
 
         jLabel4.setText("NY ANSTÄLLD");
 
-        txt_namn.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txt_namnActionPerformed(evt);
-            }
-        });
-
         jLabel5.setText("Telefon");
 
         jLabel6.setText("Mail");
 
         jLabel7.setText("TA BORT ANSTÄLLD");
 
-        txt_uppdatera_namn.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txt_uppdatera_namnActionPerformed(evt);
-            }
-        });
-
         jLabel8.setText("Namn");
 
         jButton6.setText("Ta bort");
+        jButton6.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jButton6MouseClicked(evt);
+            }
+        });
 
         LaggTill.setText("Lägg till");
         LaggTill.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -170,20 +149,16 @@ private void fyllComboboxTaBort(String a)
                 LaggTillMouseClicked(evt);
             }
         });
-        LaggTill.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                LaggTillActionPerformed(evt);
-            }
-        });
 
         jLabel9.setText("UPPDATERA ANSTÄLLD");
 
-        jButton8.setText("Uppdatera");
-        jButton8.addActionListener(new java.awt.event.ActionListener() {
+        comboAnst.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton8ActionPerformed(evt);
+                comboAnstActionPerformed(evt);
             }
         });
+
+        jButton8.setText("Uppdatera");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -223,7 +198,7 @@ private void fyllComboboxTaBort(String a)
                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                         .addComponent(jLabel7)
                         .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                            .addComponent(comboboxTaBortAnstalld, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(cbTabort, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(jButton6)))
                     .addComponent(jLabel4))
@@ -293,7 +268,7 @@ private void fyllComboboxTaBort(String a)
                 .addComponent(jLabel7)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(comboboxTaBortAnstalld, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(cbTabort, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jButton6))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jButton5)
@@ -303,42 +278,10 @@ private void fyllComboboxTaBort(String a)
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton8ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton8ActionPerformed
-
-    private void LaggTillActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_LaggTillActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_LaggTillActionPerformed
-
-    private void txt_namnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txt_namnActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txt_namnActionPerformed
-
-    private void txt_uppdatera_namnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txt_uppdatera_namnActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txt_uppdatera_namnActionPerformed
-
-    private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton5ActionPerformed
-
-    private void SpelutvecklingActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SpelutvecklingActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_SpelutvecklingActionPerformed
-
-    private void SpelProjektActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SpelProjektActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_SpelProjektActionPerformed
-
-    private void KunskapsDomanActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_KunskapsDomanActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_KunskapsDomanActionPerformed
-
     private void KunskapsDomanMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_KunskapsDomanMouseClicked
         this.dispose();
-        KunskapsDoman komp = new KunskapsDoman();
-        komp.setVisible(true);
+        KunskapsDoman kDoman = new KunskapsDoman();
+        kDoman.setVisible(true);
     }//GEN-LAST:event_KunskapsDomanMouseClicked
 
     private void AnstalldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AnstalldActionPerformed
@@ -375,6 +318,14 @@ catch(InfException e)
     
 }
     }//GEN-LAST:event_LaggTillMouseClicked
+
+    private void comboAnstActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_comboAnstActionPerformed
+fyllComboBoxAnstallda();     
+    }//GEN-LAST:event_comboAnstActionPerformed
+
+    private void jButton6MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton6MouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton6MouseClicked
 
     /**
      * @param args the command line arguments
@@ -417,8 +368,8 @@ catch(InfException e)
     private javax.swing.JButton LaggTill;
     private javax.swing.JButton SpelProjekt;
     private javax.swing.JButton Spelutveckling;
+    private javax.swing.JComboBox cbTabort;
     private javax.swing.JComboBox comboAnst;
-    private javax.swing.JComboBox comboboxTaBortAnstalld;
     private javax.swing.JButton jButton5;
     private javax.swing.JButton jButton6;
     private javax.swing.JButton jButton8;
@@ -438,4 +389,6 @@ catch(InfException e)
     private javax.swing.JTextField txt_uppdatera_namn;
     private javax.swing.JTextField txt_uppdatera_telefon;
     // End of variables declaration//GEN-END:variables
+
+
 }
