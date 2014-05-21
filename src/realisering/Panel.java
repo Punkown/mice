@@ -130,27 +130,6 @@ private InfDB db;
         txt_uppdatera_namn = new javax.swing.JTextField();
         Kompetens = new javax.swing.JPanel();
         Sök = new javax.swing.JPanel();
-        pSpelutveckling = new javax.swing.JPanel();
-        jLabel10 = new javax.swing.JLabel();
-        txt_uppdatera_telefon1 = new javax.swing.JTextField();
-        jLabel11 = new javax.swing.JLabel();
-        txt_uppdatera_mail1 = new javax.swing.JTextField();
-        jLabel12 = new javax.swing.JLabel();
-        jLabel13 = new javax.swing.JLabel();
-        jLabel14 = new javax.swing.JLabel();
-        jButton7 = new javax.swing.JButton();
-        LaggTill1 = new javax.swing.JButton();
-        txt_namn1 = new javax.swing.JTextField();
-        txt_telefon1 = new javax.swing.JTextField();
-        jLabel15 = new javax.swing.JLabel();
-        txt_mail1 = new javax.swing.JTextField();
-        comboAnst1 = new javax.swing.JComboBox();
-        jLabel16 = new javax.swing.JLabel();
-        cbTabort1 = new javax.swing.JComboBox();
-        jButton9 = new javax.swing.JButton();
-        jLabel17 = new javax.swing.JLabel();
-        jLabel18 = new javax.swing.JLabel();
-        txt_uppdatera_namn1 = new javax.swing.JTextField();
         pKompetensdoman = new javax.swing.JPanel();
         jLabel19 = new javax.swing.JLabel();
         jLabel20 = new javax.swing.JLabel();
@@ -166,7 +145,26 @@ private InfDB db;
         jButton10 = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
         tfAreaBesk = new javax.swing.JTextArea();
-        pSpelprojekt = new javax.swing.JPanel();
+        pSpelutveckling = new javax.swing.JPanel();
+        jTabbedPane1 = new javax.swing.JTabbedPane();
+        jPanel1 = new javax.swing.JPanel();
+        comboPagaendeSpel = new javax.swing.JComboBox();
+        ComboBoxAnstalldaPagaendeSpel = new javax.swing.JComboBox();
+        jLabel10 = new javax.swing.JLabel();
+        lbProjektledare = new javax.swing.JLabel();
+        lbSpelprojektPlattform = new javax.swing.JLabel();
+        lbSpelProjektStartDatum = new javax.swing.JLabel();
+        lbSpelprojektReleaseDatum = new javax.swing.JLabel();
+        jPanel2 = new javax.swing.JPanel();
+        comboBoxAvslutadeSpel = new javax.swing.JComboBox();
+        comboBoxAvslutadeSpelAnstalld = new javax.swing.JComboBox();
+        jLabel11 = new javax.swing.JLabel();
+        lbProjektledareAvslutadeSpel = new javax.swing.JLabel();
+        lbAvslutadeSpelPlattform = new javax.swing.JLabel();
+        lbAvslutadeSpelStartdatum = new javax.swing.JLabel();
+        lbAvslutadeSpelReleasedatum = new javax.swing.JLabel();
+        jPanel3 = new javax.swing.JPanel();
+        jPanel4 = new javax.swing.JPanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setMaximumSize(new java.awt.Dimension(800, 600));
@@ -395,154 +393,6 @@ private InfDB db;
 
         panel.addTab("Anställd", pAnstalldpanel);
 
-        jLabel10.setText("Namn");
-
-        jLabel11.setText("Telefon");
-
-        jLabel12.setText("Mail");
-
-        jLabel13.setText("Namn");
-
-        jLabel14.setText("NY ANSTÄLLD");
-
-        jButton7.setText("Ta bort");
-        jButton7.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jButton7MouseClicked(evt);
-            }
-        });
-
-        LaggTill1.setText("Lägg till");
-        LaggTill1.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                LaggTill1MouseClicked(evt);
-            }
-        });
-
-        jLabel15.setText("UPPDATERA ANSTÄLLD");
-
-        comboAnst1.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                comboAnst1MouseClicked(evt);
-            }
-        });
-        comboAnst1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                comboAnst1ActionPerformed(evt);
-            }
-        });
-
-        jLabel16.setText("Telefon");
-
-        cbTabort1.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                cbTabort1MouseClicked(evt);
-            }
-        });
-
-        jButton9.setText("Uppdatera");
-
-        jLabel17.setText("Mail");
-
-        jLabel18.setText("TA BORT ANSTÄLLD");
-
-        javax.swing.GroupLayout pSpelutvecklingLayout = new javax.swing.GroupLayout(pSpelutveckling);
-        pSpelutveckling.setLayout(pSpelutvecklingLayout);
-        pSpelutvecklingLayout.setHorizontalGroup(
-            pSpelutvecklingLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(pSpelutvecklingLayout.createSequentialGroup()
-                .addGap(39, 39, 39)
-                .addGroup(pSpelutvecklingLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(pSpelutvecklingLayout.createSequentialGroup()
-                        .addComponent(cbTabort1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jButton7)
-                        .addGap(0, 0, Short.MAX_VALUE))
-                    .addGroup(pSpelutvecklingLayout.createSequentialGroup()
-                        .addComponent(jLabel18)
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                    .addGroup(pSpelutvecklingLayout.createSequentialGroup()
-                        .addGroup(pSpelutvecklingLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(LaggTill1)
-                            .addGroup(pSpelutvecklingLayout.createSequentialGroup()
-                                .addGroup(pSpelutvecklingLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jLabel10)
-                                    .addComponent(jLabel11)
-                                    .addComponent(jLabel12))
-                                .addGap(24, 24, 24)
-                                .addGroup(pSpelutvecklingLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(txt_mail1, javax.swing.GroupLayout.PREFERRED_SIZE, 142, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(txt_telefon1, javax.swing.GroupLayout.PREFERRED_SIZE, 142, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(txt_namn1, javax.swing.GroupLayout.PREFERRED_SIZE, 142, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                            .addComponent(jLabel14))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addGroup(pSpelutvecklingLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(pSpelutvecklingLayout.createSequentialGroup()
-                                .addGroup(pSpelutvecklingLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jLabel13)
-                                    .addComponent(jLabel16)
-                                    .addComponent(jLabel17))
-                                .addGap(24, 24, 24)
-                                .addGroup(pSpelutvecklingLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(txt_uppdatera_mail1, javax.swing.GroupLayout.PREFERRED_SIZE, 142, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(txt_uppdatera_telefon1, javax.swing.GroupLayout.PREFERRED_SIZE, 142, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(txt_uppdatera_namn1, javax.swing.GroupLayout.PREFERRED_SIZE, 142, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                            .addComponent(jLabel15)
-                            .addComponent(jButton9)
-                            .addComponent(comboAnst1, javax.swing.GroupLayout.PREFERRED_SIZE, 89, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(126, 126, 126))))
-        );
-        pSpelutvecklingLayout.setVerticalGroup(
-            pSpelutvecklingLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(pSpelutvecklingLayout.createSequentialGroup()
-                .addGap(21, 21, 21)
-                .addGroup(pSpelutvecklingLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(pSpelutvecklingLayout.createSequentialGroup()
-                        .addComponent(jLabel15)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(comboAnst1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(3, 3, 3)
-                        .addGroup(pSpelutvecklingLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel13)
-                            .addComponent(txt_uppdatera_namn1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addGroup(pSpelutvecklingLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel16)
-                            .addComponent(txt_uppdatera_telefon1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(pSpelutvecklingLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel17)
-                            .addComponent(txt_uppdatera_mail1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(34, 34, 34)
-                        .addComponent(jButton9)
-                        .addGap(63, 63, 63))
-                    .addGroup(pSpelutvecklingLayout.createSequentialGroup()
-                        .addComponent(jLabel14)
-                        .addGap(36, 36, 36)
-                        .addGroup(pSpelutvecklingLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel10)
-                            .addComponent(txt_namn1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addGroup(pSpelutvecklingLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel11)
-                            .addComponent(txt_telefon1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(pSpelutvecklingLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel12)
-                            .addComponent(txt_mail1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(34, 34, 34)
-                        .addComponent(LaggTill1)
-                        .addGap(61, 61, 61)
-                        .addComponent(jLabel18)
-                        .addGap(25, 25, 25)
-                        .addGroup(pSpelutvecklingLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(cbTabort1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jButton7))
-                        .addGap(0, 0, Short.MAX_VALUE))))
-        );
-
-        panel.addTab("Spelutveckling", pSpelutveckling);
-
         jLabel19.setText("Benamning");
 
         jLabel20.setText("Beskrivning");
@@ -649,18 +499,159 @@ private InfDB db;
 
         panel.addTab("Kompetensdoman", pKompetensdoman);
 
-        javax.swing.GroupLayout pSpelprojektLayout = new javax.swing.GroupLayout(pSpelprojekt);
-        pSpelprojekt.setLayout(pSpelprojektLayout);
-        pSpelprojektLayout.setHorizontalGroup(
-            pSpelprojektLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 0, Short.MAX_VALUE)
+        comboPagaendeSpel.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+
+        ComboBoxAnstalldaPagaendeSpel.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+
+        jLabel10.setText("Projektledare:");
+
+        lbProjektledare.setText("jLabel11");
+
+        lbSpelprojektPlattform.setText("jLabel11");
+
+        lbSpelProjektStartDatum.setText("jLabel11");
+
+        lbSpelprojektReleaseDatum.setText("jLabel11");
+
+        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
+        jPanel1.setLayout(jPanel1Layout);
+        jPanel1Layout.setHorizontalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(26, 26, 26)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(comboPagaendeSpel, javax.swing.GroupLayout.PREFERRED_SIZE, 103, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(lbSpelprojektPlattform))
+                .addGap(70, 70, 70)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(ComboBoxAnstalldaPagaendeSpel, javax.swing.GroupLayout.PREFERRED_SIZE, 97, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(lbSpelProjektStartDatum))
+                .addGap(55, 55, 55)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addComponent(jLabel10, javax.swing.GroupLayout.PREFERRED_SIZE, 113, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(65, 65, 65)
+                        .addComponent(lbProjektledare))
+                    .addComponent(lbSpelprojektReleaseDatum))
+                .addContainerGap(81, Short.MAX_VALUE))
         );
-        pSpelprojektLayout.setVerticalGroup(
-            pSpelprojektLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 0, Short.MAX_VALUE)
+        jPanel1Layout.setVerticalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(32, 32, 32)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(comboPagaendeSpel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(ComboBoxAnstalldaPagaendeSpel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel10)
+                    .addComponent(lbProjektledare))
+                .addGap(47, 47, 47)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(lbSpelprojektPlattform)
+                    .addComponent(lbSpelProjektStartDatum)
+                    .addComponent(lbSpelprojektReleaseDatum))
+                .addContainerGap(337, Short.MAX_VALUE))
         );
 
-        panel.addTab("Spel & projekt", pSpelprojekt);
+        jTabbedPane1.addTab("Pågående spel", jPanel1);
+
+        comboBoxAvslutadeSpel.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+
+        comboBoxAvslutadeSpelAnstalld.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+
+        jLabel11.setText("Projektledare:");
+
+        lbProjektledareAvslutadeSpel.setText("jLabel12");
+
+        lbAvslutadeSpelPlattform.setText("jLabel12");
+
+        lbAvslutadeSpelStartdatum.setText("jLabel12");
+
+        lbAvslutadeSpelReleasedatum.setText("jLabel12");
+
+        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
+        jPanel2.setLayout(jPanel2Layout);
+        jPanel2Layout.setHorizontalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(comboBoxAvslutadeSpel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(lbAvslutadeSpelPlattform))
+                .addGap(78, 78, 78)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(comboBoxAvslutadeSpelAnstalld, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(lbAvslutadeSpelStartdatum))
+                .addGap(93, 93, 93)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addComponent(jLabel11)
+                        .addGap(73, 73, 73)
+                        .addComponent(lbProjektledareAvslutadeSpel))
+                    .addComponent(lbAvslutadeSpelReleasedatum))
+                .addGap(0, 111, Short.MAX_VALUE))
+        );
+        jPanel2Layout.setVerticalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addGap(34, 34, 34)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(comboBoxAvslutadeSpel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(comboBoxAvslutadeSpelAnstalld, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel11)
+                    .addComponent(lbProjektledareAvslutadeSpel))
+                .addGap(59, 59, 59)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(lbAvslutadeSpelPlattform)
+                    .addComponent(lbAvslutadeSpelStartdatum)
+                    .addComponent(lbAvslutadeSpelReleasedatum))
+                .addContainerGap(323, Short.MAX_VALUE))
+        );
+
+        jTabbedPane1.addTab("Avslutade spel", jPanel2);
+
+        javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
+        jPanel3.setLayout(jPanel3Layout);
+        jPanel3Layout.setHorizontalGroup(
+            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 670, Short.MAX_VALUE)
+        );
+        jPanel3Layout.setVerticalGroup(
+            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 462, Short.MAX_VALUE)
+        );
+
+        jTabbedPane1.addTab("Lägg till spel", jPanel3);
+
+        javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
+        jPanel4.setLayout(jPanel4Layout);
+        jPanel4Layout.setHorizontalGroup(
+            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 670, Short.MAX_VALUE)
+        );
+        jPanel4Layout.setVerticalGroup(
+            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 462, Short.MAX_VALUE)
+        );
+
+        jTabbedPane1.addTab("Eliminera spel", jPanel4);
+
+        javax.swing.GroupLayout pSpelutvecklingLayout = new javax.swing.GroupLayout(pSpelutveckling);
+        pSpelutveckling.setLayout(pSpelutvecklingLayout);
+        pSpelutvecklingLayout.setHorizontalGroup(
+            pSpelutvecklingLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(pSpelutvecklingLayout.createSequentialGroup()
+                .addGap(23, 23, 23)
+                .addComponent(jTabbedPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 675, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(23, Short.MAX_VALUE))
+        );
+        pSpelutvecklingLayout.setVerticalGroup(
+            pSpelutvecklingLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(pSpelutvecklingLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jTabbedPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 496, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(34, Short.MAX_VALUE))
+        );
+
+        panel.addTab("Spelutveckling", pSpelutveckling);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -707,26 +698,6 @@ private InfDB db;
 
         }
     }//GEN-LAST:event_KunskapsDoman_laggTillMouseClicked
-
-    private void cbTabort1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_cbTabort1MouseClicked
-        // TODO add your handling code here:
-    }//GEN-LAST:event_cbTabort1MouseClicked
-
-    private void comboAnst1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_comboAnst1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_comboAnst1ActionPerformed
-
-    private void comboAnst1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_comboAnst1MouseClicked
-
-    }//GEN-LAST:event_comboAnst1MouseClicked
-
-    private void LaggTill1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_LaggTill1MouseClicked
-        // TODO add your handling code here:
-    }//GEN-LAST:event_LaggTill1MouseClicked
-
-    private void jButton7MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton7MouseClicked
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton7MouseClicked
 
     private void cbTabortMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_cbTabortMouseClicked
 
@@ -843,34 +814,26 @@ private InfDB db;
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JComboBox ComboBoxAnstalldaPagaendeSpel;
     private javax.swing.JPanel Kompetens;
     private javax.swing.JButton KunskapsDoman_laggTill;
     private javax.swing.JButton LaggTill;
-    private javax.swing.JButton LaggTill1;
     private javax.swing.JPanel Laggtill;
     private javax.swing.JPanel Sök;
     private javax.swing.JPanel UppdateraTabort;
     private javax.swing.JButton button_taBort;
     private javax.swing.JComboBox cbTabort;
-    private javax.swing.JComboBox cbTabort1;
-    private javax.swing.JComboBox comboAnst1;
+    private javax.swing.JComboBox comboBoxAvslutadeSpel;
+    private javax.swing.JComboBox comboBoxAvslutadeSpelAnstalld;
     private javax.swing.JComboBox comboBoxKunskap;
+    private javax.swing.JComboBox comboPagaendeSpel;
     private javax.swing.JComboBox combouppdatera;
     private javax.swing.JButton jButton10;
     private javax.swing.JButton jButton5;
-    private javax.swing.JButton jButton7;
     private javax.swing.JButton jButton8;
-    private javax.swing.JButton jButton9;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
-    private javax.swing.JLabel jLabel12;
-    private javax.swing.JLabel jLabel13;
-    private javax.swing.JLabel jLabel14;
-    private javax.swing.JLabel jLabel15;
-    private javax.swing.JLabel jLabel16;
-    private javax.swing.JLabel jLabel17;
-    private javax.swing.JLabel jLabel18;
     private javax.swing.JLabel jLabel19;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel20;
@@ -885,10 +848,22 @@ private InfDB db;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
+    private javax.swing.JPanel jPanel1;
+    private javax.swing.JPanel jPanel2;
+    private javax.swing.JPanel jPanel3;
+    private javax.swing.JPanel jPanel4;
     private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JTabbedPane jTabbedPane1;
+    private javax.swing.JLabel lbAvslutadeSpelPlattform;
+    private javax.swing.JLabel lbAvslutadeSpelReleasedatum;
+    private javax.swing.JLabel lbAvslutadeSpelStartdatum;
+    private javax.swing.JLabel lbProjektledare;
+    private javax.swing.JLabel lbProjektledareAvslutadeSpel;
+    private javax.swing.JLabel lbSpelProjektStartDatum;
+    private javax.swing.JLabel lbSpelprojektPlattform;
+    private javax.swing.JLabel lbSpelprojektReleaseDatum;
     private javax.swing.JTabbedPane pAnstalldpanel;
     private javax.swing.JPanel pKompetensdoman;
-    private javax.swing.JPanel pSpelprojekt;
     private javax.swing.JPanel pSpelutveckling;
     private javax.swing.JTabbedPane panel;
     private javax.swing.JTextArea tfAreaBesk;
@@ -896,17 +871,11 @@ private InfDB db;
     private javax.swing.JTextField txt_Benamning;
     private javax.swing.JTextField txt_Beskrivning;
     private javax.swing.JTextField txt_mail;
-    private javax.swing.JTextField txt_mail1;
     private javax.swing.JTextField txt_namn;
-    private javax.swing.JTextField txt_namn1;
     private javax.swing.JTextField txt_telefon;
-    private javax.swing.JTextField txt_telefon1;
     private javax.swing.JTextField txt_uppdatera_mail;
-    private javax.swing.JTextField txt_uppdatera_mail1;
     private javax.swing.JTextField txt_uppdatera_namn;
-    private javax.swing.JTextField txt_uppdatera_namn1;
     private javax.swing.JTextField txt_uppdatera_telefon;
-    private javax.swing.JTextField txt_uppdatera_telefon1;
     // End of variables declaration//GEN-END:variables
 
 
