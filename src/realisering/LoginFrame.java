@@ -19,7 +19,7 @@ public class LoginFrame extends javax.swing.JFrame {
         try
     
         {
-            db = new InfDB("/Users/Shared/MICEDB.FDB");
+            db = new InfDB("C:\\Users\\Andreas\\Desktop\\MICEDB.fdb");
             
         }catch (InfException e)
         {

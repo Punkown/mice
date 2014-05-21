@@ -23,7 +23,7 @@ private InfDB db;
         try
     
         {
-            db = new InfDB("/Users/Shared/MICEDB.FDB");
+            db = new InfDB("C:\\Users\\Andreas\\Desktop\\MICEDB.FDB");
             fyllComboBoxAnstallda();
             
             
@@ -33,14 +33,44 @@ private InfDB db;
             e.printError();
         }
         
-        
+        setComboboxKompetensdomanUpdate();
         
     }
     
     
     
     // Denna metod behandlar insättning i combobox av "Ta bort anställda"**/
-private void fyllComboBoxAnstallda()
+                                 
+    private void setComboboxKompetensdomanUpdate()
+    {
+        ArrayList<String> arrayList1 = null;
+        try{
+            String query ="select benamning from KOMPETENSDOMAN";
+            arrayList1 = db.fetchColumn(query);
+        }catch(InfException e){e.getMessage();}
+        for(String a: arrayList1){
+            comboBoxKunskap.addItem(a);
+        }
+        setTextUBenamning();
+        setTextUBeskrivning();
+    }
+      private void setTextUBenamning()
+    {
+        tfUBenamning.setText(comboBoxKunskap.getSelectedItem().toString());
+    }
+    
+    private void setTextUBeskrivning()
+    {
+        String besk = "";
+        try{
+            besk = db.fetchSingle("select beskrivning from KOMPETENSDOMAN where benamning = '"+comboBoxKunskap.getSelectedItem().toString()+"'");
+        }catch(InfException e){}
+        tfAreaBesk.setText(besk);
+    }
+    
+
+     
+    private void fyllComboBoxAnstallda()
 {
     String sqlFraga = "SELECT AID, NAMN from ANSTALLD";
     try
@@ -535,11 +565,6 @@ private void fyllComboBoxAnstallda()
                 comboBoxKunskapItemStateChanged(evt);
             }
         });
-        comboBoxKunskap.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                comboBoxKunskapMouseClicked(evt);
-            }
-        });
 
         jLabel24.setText("Beskrivning");
 
@@ -554,7 +579,7 @@ private void fyllComboBoxAnstallda()
         pKompetensdoman.setLayout(pKompetensdomanLayout);
         pKompetensdomanLayout.setHorizontalGroup(
             pKompetensdomanLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 601, Short.MAX_VALUE)
+            .addGap(0, 721, Short.MAX_VALUE)
             .addGroup(pKompetensdomanLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(pKompetensdomanLayout.createSequentialGroup()
                     .addContainerGap()
@@ -589,7 +614,7 @@ private void fyllComboBoxAnstallda()
         );
         pKompetensdomanLayout.setVerticalGroup(
             pKompetensdomanLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 244, Short.MAX_VALUE)
+            .addGap(0, 546, Short.MAX_VALUE)
             .addGroup(pKompetensdomanLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(pKompetensdomanLayout.createSequentialGroup()
                     .addGap(62, 62, 62)
@@ -660,32 +685,6 @@ private void fyllComboBoxAnstallda()
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
-    private void comboBoxKunskapMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_comboBoxKunskapMouseClicked
-
-        try
-
-        {
-
-            String sqlFraga = "INSERT INTO KOMPETENSDOMAN VALUES(" + db.getAutoIncrement("KOMPETENSDOMAN", "kid") +
-            ",'" + txt_Benamning.getText() + "', '" +
-            txt_Beskrivning.getText() +"')";
-
-            System.out.println(sqlFraga);
-
-            db.insert(sqlFraga);
-
-        }
-
-        catch(InfException e)
-        {
-
-        }
-    }//GEN-LAST:event_comboBoxKunskapMouseClicked
-
-    private void comboBoxKunskapItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_comboBoxKunskapItemStateChanged
-
-    }//GEN-LAST:event_comboBoxKunskapItemStateChanged
 
     private void KunskapsDoman_laggTillMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_KunskapsDoman_laggTillMouseClicked
 
@@ -795,6 +794,13 @@ private void fyllComboBoxAnstallda()
     private void txt_mailActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txt_mailActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_txt_mailActionPerformed
+
+    private void comboBoxKunskapItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_comboBoxKunskapItemStateChanged
+                                                        
+        setTextUBenamning();
+        setTextUBeskrivning();
+                 
+    }//GEN-LAST:event_comboBoxKunskapItemStateChanged
 
     private void fyllComboBoxAnstallda2(String namn)
     {
