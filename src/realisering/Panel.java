@@ -75,6 +75,31 @@ private void fyllComboBoxAnstallda()
 
         jButton5 = new javax.swing.JButton();
         panel = new javax.swing.JTabbedPane();
+        pAnstalldpanel = new javax.swing.JTabbedPane();
+        Laggtill = new javax.swing.JPanel();
+        txt_mail = new javax.swing.JTextField();
+        LaggTill = new javax.swing.JButton();
+        jLabel1 = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
+        txt_namn = new javax.swing.JTextField();
+        txt_telefon = new javax.swing.JTextField();
+        cbTabort = new javax.swing.JComboBox();
+        jLabel7 = new javax.swing.JLabel();
+        button_taBort = new javax.swing.JButton();
+        UppdateraTabort = new javax.swing.JPanel();
+        txt_uppdatera_telefon = new javax.swing.JTextField();
+        txt_uppdatera_mail = new javax.swing.JTextField();
+        jLabel8 = new javax.swing.JLabel();
+        jLabel9 = new javax.swing.JLabel();
+        combouppdatera = new javax.swing.JComboBox();
+        jButton8 = new javax.swing.JButton();
+        jLabel5 = new javax.swing.JLabel();
+        jLabel6 = new javax.swing.JLabel();
+        txt_uppdatera_namn = new javax.swing.JTextField();
+        Kompetens = new javax.swing.JPanel();
+        Sök = new javax.swing.JPanel();
         pSpelutveckling = new javax.swing.JPanel();
         jLabel10 = new javax.swing.JLabel();
         txt_uppdatera_telefon1 = new javax.swing.JTextField();
@@ -112,37 +137,233 @@ private void fyllComboBoxAnstallda()
         jScrollPane1 = new javax.swing.JScrollPane();
         tfAreaBesk = new javax.swing.JTextArea();
         pSpelprojekt = new javax.swing.JPanel();
-        pAnstalldpanel = new javax.swing.JTabbedPane();
-        Sök = new javax.swing.JPanel();
-        Kompetens = new javax.swing.JPanel();
-        UppdateraTabort = new javax.swing.JPanel();
-        txt_uppdatera_telefon = new javax.swing.JTextField();
-        txt_uppdatera_mail = new javax.swing.JTextField();
-        jLabel8 = new javax.swing.JLabel();
-        jLabel9 = new javax.swing.JLabel();
-        combouppdatera = new javax.swing.JComboBox();
-        jButton8 = new javax.swing.JButton();
-        jLabel5 = new javax.swing.JLabel();
-        jLabel6 = new javax.swing.JLabel();
-        txt_uppdatera_namn = new javax.swing.JTextField();
-        Laggtill = new javax.swing.JPanel();
-        txt_mail = new javax.swing.JTextField();
-        LaggTill = new javax.swing.JButton();
-        jLabel1 = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
-        jLabel4 = new javax.swing.JLabel();
-        txt_namn = new javax.swing.JTextField();
-        txt_telefon = new javax.swing.JTextField();
-        cbTabort = new javax.swing.JComboBox();
-        jLabel7 = new javax.swing.JLabel();
-        button_taBort = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setMaximumSize(new java.awt.Dimension(800, 600));
         setMinimumSize(new java.awt.Dimension(800, 600));
         setResizable(false);
 
         jButton5.setText("Logga ut");
+        jButton5.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton5ActionPerformed(evt);
+            }
+        });
+
+        Laggtill.setMaximumSize(new java.awt.Dimension(700, 500));
+        Laggtill.setMinimumSize(new java.awt.Dimension(700, 500));
+
+        txt_mail.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txt_mailActionPerformed(evt);
+            }
+        });
+
+        LaggTill.setText("Lägg till");
+        LaggTill.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                LaggTillMouseClicked(evt);
+            }
+        });
+
+        jLabel1.setText("Namn");
+
+        jLabel2.setText("Telefon");
+
+        jLabel3.setText("Mail");
+
+        jLabel4.setText("NY ANSTÄLLD");
+
+        txt_telefon.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txt_telefonActionPerformed(evt);
+            }
+        });
+
+        cbTabort.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                cbTabortMouseClicked(evt);
+            }
+        });
+        cbTabort.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cbTabortActionPerformed(evt);
+            }
+        });
+
+        jLabel7.setText("TA BORT ANSTÄLLD");
+
+        button_taBort.setText("Ta bort");
+        button_taBort.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                button_taBortMouseClicked(evt);
+            }
+        });
+
+        javax.swing.GroupLayout LaggtillLayout = new javax.swing.GroupLayout(Laggtill);
+        Laggtill.setLayout(LaggtillLayout);
+        LaggtillLayout.setHorizontalGroup(
+            LaggtillLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(LaggtillLayout.createSequentialGroup()
+                .addGroup(LaggtillLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(LaggtillLayout.createSequentialGroup()
+                        .addGap(65, 65, 65)
+                        .addComponent(jLabel4))
+                    .addGroup(LaggtillLayout.createSequentialGroup()
+                        .addGap(54, 54, 54)
+                        .addGroup(LaggtillLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addGroup(LaggtillLayout.createSequentialGroup()
+                                .addGroup(LaggtillLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jLabel1)
+                                    .addComponent(jLabel3))
+                                .addGap(35, 35, 35)
+                                .addGroup(LaggtillLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addComponent(txt_namn, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(txt_mail, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(LaggTill)))
+                            .addGroup(LaggtillLayout.createSequentialGroup()
+                                .addComponent(jLabel2)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(txt_telefon, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGap(99, 99, 99)
+                        .addGroup(LaggtillLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel7)
+                            .addGroup(LaggtillLayout.createSequentialGroup()
+                                .addComponent(cbTabort, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(button_taBort)))))
+                .addContainerGap(80, Short.MAX_VALUE))
+        );
+        LaggtillLayout.setVerticalGroup(
+            LaggtillLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(LaggtillLayout.createSequentialGroup()
+                .addGroup(LaggtillLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(LaggtillLayout.createSequentialGroup()
+                        .addGap(81, 81, 81)
+                        .addComponent(jLabel4))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, LaggtillLayout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(jLabel7)))
+                .addGap(18, 18, 18)
+                .addGroup(LaggtillLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(LaggtillLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(jLabel1)
+                        .addComponent(cbTabort, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(button_taBort))
+                    .addComponent(txt_namn, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(11, 11, 11)
+                .addGroup(LaggtillLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel2)
+                    .addComponent(txt_telefon, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(LaggtillLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel3)
+                    .addComponent(txt_mail, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addComponent(LaggTill)
+                .addContainerGap(230, Short.MAX_VALUE))
+        );
+
+        pAnstalldpanel.addTab("Lägg till/Ta bort", Laggtill);
+
+        jLabel8.setText("Namn");
+
+        jLabel9.setText("UPPDATERA ANSTÄLLD");
+
+        jButton8.setText("Uppdatera");
+        jButton8.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jButton8MouseClicked(evt);
+            }
+        });
+
+        jLabel5.setText("Telefon");
+
+        jLabel6.setText("Mail");
+
+        javax.swing.GroupLayout UppdateraTabortLayout = new javax.swing.GroupLayout(UppdateraTabort);
+        UppdateraTabort.setLayout(UppdateraTabortLayout);
+        UppdateraTabortLayout.setHorizontalGroup(
+            UppdateraTabortLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(UppdateraTabortLayout.createSequentialGroup()
+                .addGap(38, 38, 38)
+                .addGroup(UppdateraTabortLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(UppdateraTabortLayout.createSequentialGroup()
+                        .addComponent(jLabel8)
+                        .addGap(73, 73, 73)
+                        .addComponent(txt_uppdatera_namn, javax.swing.GroupLayout.PREFERRED_SIZE, 142, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(UppdateraTabortLayout.createSequentialGroup()
+                        .addComponent(jLabel5)
+                        .addGap(63, 63, 63)
+                        .addComponent(txt_uppdatera_telefon, javax.swing.GroupLayout.PREFERRED_SIZE, 142, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(UppdateraTabortLayout.createSequentialGroup()
+                        .addComponent(jLabel6)
+                        .addGap(84, 84, 84)
+                        .addComponent(txt_uppdatera_mail, javax.swing.GroupLayout.PREFERRED_SIZE, 142, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jLabel9)
+                    .addComponent(combouppdatera, javax.swing.GroupLayout.PREFERRED_SIZE, 145, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, UppdateraTabortLayout.createSequentialGroup()
+                        .addComponent(jButton8)
+                        .addGap(9, 9, 9)))
+                .addGap(64, 64, 64))
+        );
+        UppdateraTabortLayout.setVerticalGroup(
+            UppdateraTabortLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(UppdateraTabortLayout.createSequentialGroup()
+                .addGap(64, 64, 64)
+                .addComponent(jLabel9)
+                .addGap(18, 18, 18)
+                .addComponent(combouppdatera, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addGroup(UppdateraTabortLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(UppdateraTabortLayout.createSequentialGroup()
+                        .addGap(6, 6, 6)
+                        .addComponent(jLabel8))
+                    .addComponent(txt_uppdatera_namn, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(6, 6, 6)
+                .addGroup(UppdateraTabortLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel5)
+                    .addComponent(txt_uppdatera_telefon, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(6, 6, 6)
+                .addGroup(UppdateraTabortLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(txt_uppdatera_mail, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(UppdateraTabortLayout.createSequentialGroup()
+                        .addGap(6, 6, 6)
+                        .addComponent(jLabel6)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jButton8)
+                .addContainerGap())
+        );
+
+        pAnstalldpanel.addTab("Uppdatera", UppdateraTabort);
+
+        javax.swing.GroupLayout KompetensLayout = new javax.swing.GroupLayout(Kompetens);
+        Kompetens.setLayout(KompetensLayout);
+        KompetensLayout.setHorizontalGroup(
+            KompetensLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 0, Short.MAX_VALUE)
+        );
+        KompetensLayout.setVerticalGroup(
+            KompetensLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 0, Short.MAX_VALUE)
+        );
+
+        pAnstalldpanel.addTab("Kompetens", Kompetens);
+
+        javax.swing.GroupLayout SökLayout = new javax.swing.GroupLayout(Sök);
+        Sök.setLayout(SökLayout);
+        SökLayout.setHorizontalGroup(
+            SökLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 0, Short.MAX_VALUE)
+        );
+        SökLayout.setVerticalGroup(
+            SökLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 0, Short.MAX_VALUE)
+        );
+
+        pAnstalldpanel.addTab("Sök", Sök);
+
+        panel.addTab("Anställd", pAnstalldpanel);
 
         jLabel10.setText("Namn");
 
@@ -416,189 +637,6 @@ private void fyllComboBoxAnstallda()
 
         panel.addTab("Spel & projekt", pSpelprojekt);
 
-        javax.swing.GroupLayout SökLayout = new javax.swing.GroupLayout(Sök);
-        Sök.setLayout(SökLayout);
-        SökLayout.setHorizontalGroup(
-            SökLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 0, Short.MAX_VALUE)
-        );
-        SökLayout.setVerticalGroup(
-            SökLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 0, Short.MAX_VALUE)
-        );
-
-        pAnstalldpanel.addTab("Sök", Sök);
-
-        javax.swing.GroupLayout KompetensLayout = new javax.swing.GroupLayout(Kompetens);
-        Kompetens.setLayout(KompetensLayout);
-        KompetensLayout.setHorizontalGroup(
-            KompetensLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 0, Short.MAX_VALUE)
-        );
-        KompetensLayout.setVerticalGroup(
-            KompetensLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 0, Short.MAX_VALUE)
-        );
-
-        pAnstalldpanel.addTab("Kompetens", Kompetens);
-
-        jLabel8.setText("Namn");
-
-        jLabel9.setText("UPPDATERA ANSTÄLLD");
-
-        jButton8.setText("Uppdatera");
-
-        jLabel5.setText("Telefon");
-
-        jLabel6.setText("Mail");
-
-        javax.swing.GroupLayout UppdateraTabortLayout = new javax.swing.GroupLayout(UppdateraTabort);
-        UppdateraTabort.setLayout(UppdateraTabortLayout);
-        UppdateraTabortLayout.setHorizontalGroup(
-            UppdateraTabortLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, UppdateraTabortLayout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGroup(UppdateraTabortLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(UppdateraTabortLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                        .addComponent(jButton8)
-                        .addGroup(UppdateraTabortLayout.createSequentialGroup()
-                            .addGroup(UppdateraTabortLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(jLabel8)
-                                .addComponent(jLabel5)
-                                .addComponent(jLabel6))
-                            .addGap(24, 24, 24)
-                            .addGroup(UppdateraTabortLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(txt_uppdatera_mail, javax.swing.GroupLayout.PREFERRED_SIZE, 142, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(txt_uppdatera_telefon, javax.swing.GroupLayout.PREFERRED_SIZE, 142, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(txt_uppdatera_namn, javax.swing.GroupLayout.PREFERRED_SIZE, 142, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                    .addGroup(UppdateraTabortLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                        .addComponent(combouppdatera, javax.swing.GroupLayout.Alignment.LEADING, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jLabel9, javax.swing.GroupLayout.Alignment.LEADING)))
-                .addContainerGap())
-        );
-        UppdateraTabortLayout.setVerticalGroup(
-            UppdateraTabortLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, UppdateraTabortLayout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jLabel9)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(combouppdatera, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(3, 3, 3)
-                .addGroup(UppdateraTabortLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel8)
-                    .addComponent(txt_uppdatera_namn, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(UppdateraTabortLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel5)
-                    .addComponent(txt_uppdatera_telefon, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(UppdateraTabortLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel6)
-                    .addComponent(txt_uppdatera_mail, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jButton8)
-                .addContainerGap())
-        );
-
-        pAnstalldpanel.addTab("Uppdatera", UppdateraTabort);
-
-        LaggTill.setText("Lägg till");
-        LaggTill.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                LaggTillMouseClicked(evt);
-            }
-        });
-
-        jLabel1.setText("Namn");
-
-        jLabel2.setText("Telefon");
-
-        jLabel3.setText("Mail");
-
-        jLabel4.setText("NY ANSTÄLLD");
-
-        cbTabort.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                cbTabortMouseClicked(evt);
-            }
-        });
-
-        jLabel7.setText("TA BORT ANSTÄLLD");
-
-        button_taBort.setText("Ta bort");
-        button_taBort.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                button_taBortMouseClicked(evt);
-            }
-        });
-
-        javax.swing.GroupLayout LaggtillLayout = new javax.swing.GroupLayout(Laggtill);
-        Laggtill.setLayout(LaggtillLayout);
-        LaggtillLayout.setHorizontalGroup(
-            LaggtillLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, LaggtillLayout.createSequentialGroup()
-                .addContainerGap(361, Short.MAX_VALUE)
-                .addGroup(LaggtillLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel4)
-                    .addGroup(LaggtillLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                        .addComponent(LaggTill)
-                        .addGroup(LaggtillLayout.createSequentialGroup()
-                            .addGroup(LaggtillLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(jLabel1)
-                                .addComponent(jLabel2)
-                                .addComponent(jLabel3))
-                            .addGap(24, 24, 24)
-                            .addGroup(LaggtillLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(txt_mail, javax.swing.GroupLayout.PREFERRED_SIZE, 142, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(txt_telefon, javax.swing.GroupLayout.PREFERRED_SIZE, 142, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(txt_namn, javax.swing.GroupLayout.PREFERRED_SIZE, 142, javax.swing.GroupLayout.PREFERRED_SIZE)))))
-                .addContainerGap())
-            .addGroup(LaggtillLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(LaggtillLayout.createSequentialGroup()
-                    .addContainerGap()
-                    .addGroup(LaggtillLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addGroup(LaggtillLayout.createSequentialGroup()
-                            .addComponent(cbTabort, javax.swing.GroupLayout.PREFERRED_SIZE, 145, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGap(43, 43, 43)
-                            .addComponent(button_taBort))
-                        .addComponent(jLabel7))
-                    .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
-        );
-        LaggtillLayout.setVerticalGroup(
-            LaggtillLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, LaggtillLayout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jLabel4)
-                .addGap(18, 18, 18)
-                .addGroup(LaggtillLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel1)
-                    .addComponent(txt_namn, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(12, 12, 12)
-                .addGroup(LaggtillLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel2)
-                    .addComponent(txt_telefon, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(LaggtillLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel3)
-                    .addComponent(txt_mail, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(LaggTill)
-                .addContainerGap())
-            .addGroup(LaggtillLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(LaggtillLayout.createSequentialGroup()
-                    .addGap(63, 63, 63)
-                    .addComponent(jLabel7)
-                    .addGap(18, 18, 18)
-                    .addGroup(LaggtillLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(cbTabort, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(button_taBort))
-                    .addContainerGap(197, Short.MAX_VALUE)))
-        );
-
-        pAnstalldpanel.addTab("Lägg till", Laggtill);
-
-        panel.addTab("Anställd", pAnstalldpanel);
-
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -615,7 +653,7 @@ private void fyllComboBoxAnstallda()
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addComponent(panel)
-                .addGap(24, 24, 24)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jButton5)
                 .addContainerGap())
         );
@@ -737,6 +775,26 @@ private void fyllComboBoxAnstallda()
 
         
     }//GEN-LAST:event_button_taBortMouseClicked
+
+    private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton5ActionPerformed
+
+    private void cbTabortActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cbTabortActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_cbTabortActionPerformed
+
+    private void jButton8MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton8MouseClicked
+
+       }//GEN-LAST:event_jButton8MouseClicked
+
+    private void txt_telefonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txt_telefonActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txt_telefonActionPerformed
+
+    private void txt_mailActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txt_mailActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txt_mailActionPerformed
 
     private void fyllComboBoxAnstallda2(String namn)
     {
